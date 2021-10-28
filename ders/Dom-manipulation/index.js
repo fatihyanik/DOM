@@ -33,12 +33,12 @@ console.dir(allParas); */
 
 
 //document.querySelectorAll(css selector) returns you NodeList (universal method) 
-let allParas = document.querySelectorAll("p");
+/* let allParas = document.querySelectorAll("p");
 console.dir(allParas);
 allParas.forEach(elem=>{
     elem.setAttribute("class","para");
     elem.setAttribute("data-item", "paragraph")
-})
+}) */
 
 /*
 document.getElementsByClassName()
@@ -64,8 +64,8 @@ background-color:red;*/
 backgroundColor:"red";*/
 
 //set src for image
-let image = document.querySelector("img");
-let btn = document.querySelector("button");
+/* let image = document.querySelector("img");
+let btn = document.querySelector("button"); */
 /* image.setAttribute("src", "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fd/3c/antalya.jpg?w=800&h=600&s=1");
 
 image.removeAttribute("src") */
