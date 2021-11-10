@@ -16,10 +16,10 @@ class Request {
 }
 const request = new Request();
 request
-  .post("https://jsonplaceholder.typicode.com/posts", {
+  .post("https://jsonplaceholder.typicode.com/albums", {
     userId: 1,
-    title: "Fatih",
-    body: "Asasad",
+    id: 10,
+    body: "Scharif",
   })
   .then((newPost) => console.log(newPost))
   .catch((err) => console.log(err));
