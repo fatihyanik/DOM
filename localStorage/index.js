@@ -3,10 +3,11 @@ const users = {
     "lastName" :"Yanik"
 }
 
-
-localStorage.setItem("age", 28);
 localStorage.getItem(users["firstName"]);
 localStorage.getItem(users["lastName"]);
+localStorage.setItem("users", JSON.stringify(users));
 
-const lastName = localStorage.getItem("lastName");
-console.log(lastName);
+
+const newUser = JSON.parse(localStorage.getItem("users"));
+console.log(newUser);
+console.log(newUser["lastName"]);
