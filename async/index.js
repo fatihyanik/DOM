@@ -109,7 +109,7 @@ async function run() {
 
 console.log("line 106"); */
 
-function MyPromise() {
+/* function MyPromise() {
   return new Promise((resolve, reject) => {
     console.log("i am inside promise");
     setTimeout(()=>{
@@ -122,3 +122,17 @@ console.log(MyPromise())
 MyPromise()
   .then((data)=>console.log("I received something from promise .......", data))
   .catch((err) => console.log("there is something wrong with promise"));
+ */
+
+  let timerHeader = document.getElementById("time");
+  let timerButton = document.getElementById("timerButton");
+
+  let timer = setInterval(()=>{
+      let time = new Date().toUTCString();
+      timerHeader.innerText=time
+  },1000)
+
+  timerButton.addEventListener("click",()=>{
+    clearInterval(timer);
+  })
+
