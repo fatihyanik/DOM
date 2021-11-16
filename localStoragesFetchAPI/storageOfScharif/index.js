@@ -18,6 +18,7 @@ const list = document.getElementById("list");
 commentForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const postData = async () => {
+  
     const data = await fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
       body: JSON.stringify({
@@ -28,8 +29,11 @@ commentForm.addEventListener("submit", (e) => {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-    }).then((response) => response.json());
-    let listItem = document.createElement("li");
+    }).then((response) => response.json())
+      .catch((err) => console.log(err));
+   
+   
+      let listItem = document.createElement("li");
     listItem.textContent = `Title: ${data.title}, body: ${data.body}, userId: ${data.userId}`;
     let liArr;
     if (localStorage.getItem("listData") === null) {
