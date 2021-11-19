@@ -97,13 +97,14 @@ btn.addEventListener("click", fetchData); */
 }
 btn.addEventListener("click", fetchData); */
 
-console.log("line 100");
+/* console.log("line 100");
 
 async function run() {
   return "line 103";
 }
-//console.log(run())
-/* run().then(data=> console.log(data))
+
+console.log(run())
+run().then(data=> console.log(data))
 .catch(err => console.log(err.message))
 .finally(()=> console.log("finished promise"));
 
@@ -121,10 +122,10 @@ console.log(MyPromise())
 
 MyPromise()
   .then((data)=>console.log("I received something from promise .......", data))
-  .catch((err) => console.log("there is something wrong with promise"));
- */
+  .catch((err) => console.log("there is something wrong with promise")); */
 
-  let timerHeader = document.getElementById("time");
+
+/*   let timerHeader = document.getElementById("time");
   let timerButton = document.getElementById("timerButton");
 
   let timer = setInterval(()=>{
@@ -134,5 +135,5 @@ MyPromise()
 
   timerButton.addEventListener("click",()=>{
     clearInterval(timer);
-  })
+  }) */
 
