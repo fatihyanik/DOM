@@ -1,0 +1,13 @@
+h1{
+    background-color: blue;
+}
+ul{
+    display: flex;
+    list-style: none;
+}
+ul li{
+    width: 200px;
+}
+.heading{
+    border: 2px solid black;
+}
