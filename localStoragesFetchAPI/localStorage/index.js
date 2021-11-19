@@ -26,6 +26,7 @@ if (nameArr != null) {
 
 document.querySelector('#form').addEventListener('submit', function (e) {
     const newName = document.querySelector('.name').value;
+    console.log(newName);
     let nameArr;
 
     if (localStorage.getItem('nameList') === null) {

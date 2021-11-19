@@ -21,17 +21,16 @@ const handleSubmit = function () {
       let listItem = document.createElement("li");
       listItem.textContent = `Title: ${obj.title}, body: ${obj.body}, userId: ${obj.userId}`;
       let liArr;
-      if (localStorage.getItem("listData") === null) {
+      if (localListArr === null) {
         liArr = [];
       } else {
-        liArr = JSON.parse(localStorage.getItem("listData"));
+        liArr = localListArr;
       }
       liArr.push(listItem.textContent);
       localStorage.setItem("listData", JSON.stringify(liArr));
       list.appendChild(listItem);
-      title.value = "";
-      body.value = "";
-      userId.value = "";
+     
+      
       //let text = `Title: ${obj.title}, body: ${obj.body}, userId: ${obj.userId}`;
       //let textNode = document.createTextNode(text);
       //listItem.appendChild(textNode);
@@ -39,11 +38,6 @@ const handleSubmit = function () {
       //appChild = localStorage.setItem;
     });
 };
-
-submitBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  handleSubmit();
-});
 
 const localListArr = JSON.parse(localStorage.getItem("listData"));
 if (localListArr !== null) {
@@ -53,6 +47,16 @@ if (localListArr !== null) {
     list.appendChild(listItem);
   });
 }
+
+submitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  handleSubmit();
+  title.value = "";
+  body.value = "";
+  userId.value = "";
+});
+
+
 
 //let obj = {name:"John"};
 //use JSON.stringify to convert JS objects to JSON-formatted strings
