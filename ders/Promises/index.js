@@ -112,3 +112,47 @@ console.log(convertedArray);
 let originalData = JSON.parse(string)
 console.log(originalData); */
 
+function firstFetch() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("setTimeout after 5s, first data we want to fetch");
+      resolve("finished with first fetch");
+    }, 5000);
+  });
+}
+
+function secondFetch() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("setTimeout after 2s, third data we want to fetch");
+    }, 2000);
+    resolve("finish with second fetch");
+  });
+}
+
+function thirdFetch() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("setTimeout after 1s, second data we want to fetch");
+    }, 1000);
+    reject("there is an error in this fetch");
+  });
+}
+
+firstFetch()
+  .then((value) => secondFetch())
+  .then((value1) => thirdFetch())
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+
+//async await
+async function handlePromises() {
+  try {
+    await thirdFetch();
+    await firstFetch();
+    await thirdFetch();
+  } catch (err) {
+    alert(err);
+  }
+}
+handlePromises();
